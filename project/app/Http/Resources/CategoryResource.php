@@ -8,8 +8,6 @@ class CategoryResource extends JsonResource
 {
     public function toArray($request)
     {
-        $user = current_user();
-
         return [
             'name' => $this->name,
             'created_at' => format_date($this->created_at),

@@ -28,10 +28,12 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resources([
         'categories' => \App\Http\Controllers\CategoryController::class,
-        'units' => \App\Http\Controllers\UnitController::class
+        'units' => \App\Http\Controllers\UnitController::class,
+        'users' => \App\Http\Controllers\UserController::class,
     ]);
 
 
     Route::get('pagination/categories', [\App\Http\Controllers\CategoryController::class, 'pagination'])->name('pagination.categories');
     Route::get('pagination/units', [\App\Http\Controllers\UnitController::class, 'pagination'])->name('pagination.units');
+    Route::get('pagination/users', [\App\Http\Controllers\UserController::class, 'pagination'])->name('pagination.users');
 });

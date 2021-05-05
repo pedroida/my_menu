@@ -6,12 +6,6 @@ return [
         'registration' => 'Cadastros',
         'dashboard' => 'Dashboard',
         'users' => 'Usuários',
-        'sources' => 'Origens',
-        'meals' => 'Refeições',
-        'clients' => 'Acolhidos',
-        'clients_forbidden' => 'Acolhidos proibidos',
-        'stays' => 'Estadias',
-        'donations' => 'Doações',
         'categories' => 'Categorias',
         'units' => 'Unidades'
     ],
@@ -22,44 +16,12 @@ return [
         'password_reset' => 'Redefinição de Senha',
     ],
 
-    'admin-users' => [
-        'label' => 'Administradores',
-        'index' => 'Usuários Administradores',
-        'show' => 'Usuário Administrador :. Detalhes',
-        'edit' => 'Usuário Administrador :. Edição',
-        'create' => 'Usuário Administrador :. Novo',
-    ],
-
-    'client-users' => [
-        'label' => 'Clientes',
-        'index' => 'Usuários Clientes',
-        'show' => 'Usuário Cliente :. Detalhes',
-        'edit' => 'Usuário Cliente :. Edição',
-        'create' => 'Usuário Cliente :. Novo',
-    ],
-
-    'voluntary-users' => [
-        'label' => 'Voluntários',
-        'index' => 'Usuários Voluntários',
-        'show' => 'Usuário Voluntário :. Detalhes',
-        'edit' => 'Usuário Voluntário :. Edição',
-        'create' => 'Usuário Voluntário :. Novo',
-    ],
-
-    'sources' => [
-        'label' => 'Origens',
-        'index' => 'Origens',
-        'show' => 'Origem :. Detalhes',
-        'edit' => 'Origem :. Edição',
-        'create' => 'Origem :. Novo',
-    ],
-
-    'donations' => [
-        'label' => 'Doações',
-        'index' => 'Doações',
-        'show' => 'Doação :. Detalhes',
-        'edit' => 'Doação :. Edição',
-        'create' => 'Doação :. Novo',
+    'users' => [
+        'label' => 'Usuários',
+        'index' => 'Usuários',
+        'show' => 'Usuário :. Detalhes',
+        'edit' => 'Usuário :. Edição',
+        'create' => 'Usuário :. Novo',
     ],
 
     'categories' => [

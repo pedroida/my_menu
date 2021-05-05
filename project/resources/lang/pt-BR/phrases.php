@@ -3,7 +3,7 @@
 return [
     'common' => [
         'required_fields' => 'Todos os campos com (*) são de preenchimento obrigatório.',
-        'password_caracter' => 'Senha deve ter no mínimo 6 caracteres.',
+        'password_caracter' => 'Senha deve ter no mínimo 8 caracteres.',
         'empty_table' => '* Nenhum registro encontrado *'
     ],
 

@@ -10,24 +10,8 @@ return [
         'create' => 'Novo'
     ],
 
-    'users-admin' => [
-        'index' => 'Usuários Administradores'
-    ],
-
-    'users-voluntary' => [
-        'index' => 'Usuários Clientes'
-    ],
-
-    'users-voluntary' => [
-        'index' => 'Usuários Voluntários'
-    ],
-
-    'sources' => [
-        'index' => 'Origens'
-    ],
-
-    'donations' => [
-        'index' => 'Doações'
+    'users' => [
+        'index' => 'Usuários'
     ],
 
     'categories' => [
@@ -36,19 +20,6 @@ return [
 
     'units' => [
         'index' => 'Unidades'
-    ],
-
-    'meals' => [
-        'index' => 'Refeições',
-    ],
-
-    'clients' => [
-        'index' => 'Acolhidos',
-        'forbidden_index' => 'Acolhidos proibidos',
-    ],
-
-    'stays' => [
-        'index' => 'Estadias',
     ],
 
     'profile' => [
