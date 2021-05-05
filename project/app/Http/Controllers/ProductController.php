@@ -42,6 +42,12 @@ class ProductController extends Controller
         return $this->chooseReturn('success', $message, 'products.index');
     }
 
+    public function show($id)
+    {
+        $product = $this->repository->findOrFail($id);
+        return view('products.show', compact('product'));
+    }
+
     public function edit($id)
     {
         $product = $this->repository->findOrFail($id);
