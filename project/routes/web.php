@@ -1,8 +1,6 @@
 <?php
 
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,14 +14,24 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->name('dashboard');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware(['auth'])->group(function () {
+    /** Profile */
+    Route::get('profile', 'ProfileController@index')->name('profile');
+    Route::put('profile', 'ProfileController@update')->name('profile.update');
+
+    Route::resources([
+        'categories' => \App\Http\Controllers\CategoryController::class,
+        'units' => \App\Http\Controllers\UnitController::class
+    ]);
+
+
+    Route::get('pagination/categories', [\App\Http\Controllers\CategoryController::class, 'pagination'])->name('pagination.categories');
+    Route::get('pagination/units', [\App\Http\Controllers\UnitController::class, 'pagination'])->name('pagination.units');
+});

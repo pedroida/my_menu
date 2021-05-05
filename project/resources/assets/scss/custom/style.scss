@@ -1,0 +1,27 @@
+// Template Overritde
+@import "override/card";
+@import "override/form";
+@import "override/misc";
+
+// Components
+@import "components";
+
+//generic customize
+
+.vdp-datepicker > div > .form-control[readonly] {
+  background-color: #fdfdff;
+}
+
+.custom-file-label {
+  &:after {
+    content: "Buscar"
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .nav-pills {
+    .nav-link {
+      width: 100%;
+    }
+  }
+}

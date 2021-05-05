@@ -1,56 +1,61 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('layouts.auth')
+@section('title', __('headings.auth.login'))
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+@section('content')
+<div class="card card-primary">
+    <div class="card-header">
+        <h4>@lang('headings.auth.login')</h4>
+    </div>
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('login') }}">
+    <div class="card-body">
+        <form method="POST" action="{{ route('login') }}" class="needs-validation">
             @csrf
-
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-            </div>
-
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+            <div class="form-group floating-addon">
+                <label for="email">
+                    @lang('labels.common.email')
                 </label>
+                <div class="input-group {{ has_error_class('email') }}">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-at"></i>
+                        </span>
+                    </div>
+                    <input type="email" name="email" tabindex="1" autofocus required
+                        class="form-control {{ has_error_class('email') }}"
+                        placeholder="@lang('placeholders.auth.email')"
+                        value="{{old('email', $user->email ?? '')}}">
+                </div>
+                @errorblock('email')
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
+            <div class="form-group floating-addon">
+                <label for="password" class="form-control-label">
+                    @lang('labels.common.password')
+                </label>
+                <div class="float-right">
+                    <a href="{{ route('password.request') }}" class="text-small"  tabindex="999">
+                        @lang('links.auth.forgot_your_password')
                     </a>
-                @endif
+                </div>
+                <div class="input-group {{ has_error_class('password') }}">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">
+                            <i class="fas fa-asterisk"></i>
+                        </span>
+                    </div>
+                    <input type="password" name="password" autocomplete="new-password" tabindex="2" required
+                        class="form-control {{ has_error_class('password') }}"
+                        placeholder="@lang('placeholders.auth.password')">
+                </div>
+                @errorblock('password')
+            </div>
 
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-button>
+            <div class="form-group mb-0">
+                <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="3">
+                    @lang('buttons.common.access')
+                </button>
             </div>
         </form>
-    </x-auth-card>
-</x-guest-layout>
+    </div>
+</div>
+@endsection

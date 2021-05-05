@@ -1,36 +1,80 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <meta name="description" content="Base Laravel Application">
+  <meta name="author" content="Lucas Luan Pontarolo">
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  <!-- Title -->
+  <title>{{ config('app.name') }}@hasSection ('title') - @yield('title')@endif</title>
 
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+  <!-- Favicon icon -->
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
 
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
+  <!-- Main css -->
+  <link rel="stylesheet" href="{{ mix('assets/css/app.css') }}">
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+  <!-- Page Specific Head -->
+  @yield('head')
+</head>
+
+<body>
+  <div id="app">
+    <div class="main-wrapper main-wrapper-1">
+      <!-- Navbar -->
+      @include('layouts._partials.navbar.navbar')
+
+      <!-- Sidebar -->
+      @include('layouts._partials.sidebar.sidebar')
+
+      @yield('modal-section')
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          @hasSection ('page-header')
+            <div class="section-header">
+              @yield('page-header')
+            </div>
+          @endif
+
+          <div class="section-body">
+            @include('layouts._partials.flash-messages')
+            @yield('content')
+          </div>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer class="main-footer">
+        <div class="footer-left">
+          <span>Copyright &copy; Corp {{ date('Y') }}</span>
         </div>
-    </body>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- Logout Modal-->
+  @include('layouts._partials.logout_modal')
+
+  <!-- Core JS -->
+  <script src="{{ mix('assets/js/manifest.js') }}"></script>
+  <script src="{{ mix('assets/js/vendor.js') }}"></script>
+  <script src="{{ mix('assets/js/app.js') }}"></script>
+
+  <!-- JS Libraies -->
+  @stack('page_libraries_scripts')
+
+  <!-- Page Specific JS File -->
+  @stack('page_specific_scripts')
+</body>
+
+@yield('scripts')
+
 </html>
