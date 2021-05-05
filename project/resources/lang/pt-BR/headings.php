@@ -7,7 +7,8 @@ return [
         'dashboard' => 'Dashboard',
         'users' => 'Usuários',
         'categories' => 'Categorias',
-        'units' => 'Unidades'
+        'units' => 'Unidades',
+        'products' => 'Produtos',
     ],
 
     'auth' => [
@@ -22,6 +23,14 @@ return [
         'show' => 'Usuário :. Detalhes',
         'edit' => 'Usuário :. Edição',
         'create' => 'Usuário :. Novo',
+    ],
+
+    'products' => [
+        'label' => 'Produtos',
+        'index' => 'Produtos',
+        'show' => 'Produto :. Detalhes',
+        'edit' => 'Produto :. Edição',
+        'create' => 'Produto :. Novo',
     ],
 
     'categories' => [

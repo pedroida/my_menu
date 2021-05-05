@@ -22,6 +22,10 @@ return [
         'index' => 'Unidades'
     ],
 
+    'products' => [
+        'index' => 'Produtos'
+    ],
+
     'profile' => [
         'index' => 'Perfil'
     ],

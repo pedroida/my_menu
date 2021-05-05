@@ -48,4 +48,9 @@ return [
     'units' => [
         'name' => 'Nome da unidade',
     ],
+
+    'products' => [
+        'name' => 'Nome do produto',
+        'description' => 'Descrição',
+    ],
 ];

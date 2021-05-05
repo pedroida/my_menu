@@ -50,6 +50,11 @@ return [
         'unit' => 'Unidade',
         'category' => 'Categoria',
         'create_meal' => 'Cadastrar novo dia de refeição',
+        'description' => 'Descrição',
+        'price' => 'Preço',
+        'image' => 'Imagem',
+        'select_image' => 'Selecionar imagem',
+        'thumb' => 'Thumbnail'
     ],
 
     'stays' => [

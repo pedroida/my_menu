@@ -1,10 +1,11 @@
 import MaskBehaviors from './masks-behaviors'
+import './mask-money.min'
 
 $(function() {
     $('.mask-cellphone').mask(MaskBehaviors.nineDigitsBehavior, MaskBehaviors.nineDigitsOptions)
     $('.mask-phone').mask(MaskBehaviors.nineDigitsBehavior, MaskBehaviors.nineDigitsOptions)
 
-    $('.mask-money').mask('#.##0,00', { reverse: true })
+    $('.mask-money').maskMoney({decimal: ",", thousands: "."})
     $('.mask-quantity').mask('#,000', { reverse: true })
     $('.mask-cep').mask('00000-000', { clearIfNotMatch: true, placeholder: '00000-000' })
     $('.mask-cpf').mask('000.000.000-00', { reverse: false, clearIfNotMatch: true, placeholder: '000.000.000-00' })

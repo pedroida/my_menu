@@ -18,10 +18,18 @@
         </a>
     </li>
 
+    <li class="{{ is_active('products.index') }}">
+        <a class="nav-link" href="{{ route('products.index') }}" data-toggle="tooltip" data-placement="right"
+           title="@lang('headings.common.products')">
+            <i class="fas fa-store"></i>
+            <span>@lang('headings.common.products')</span>
+        </a>
+    </li>
+
     <li class="{{ is_active('categories.index') }}">
         <a class="nav-link" href="{{ route('categories.index') }}" data-toggle="tooltip" data-placement="right"
            title="@lang('headings.common.categories')">
-            <i class="fas fa-building"></i>
+            <i class="fas fa-tags"></i>
             <span>@lang('headings.common.categories')</span>
         </a>
     </li>
@@ -29,7 +37,7 @@
     <li class="{{ is_active('units.index') }}">
         <a class="nav-link" href="{{ route('units.index') }}" data-toggle="tooltip" data-placement="right"
            title="@lang('headings.common.units')">
-            <i class="fas fa-building"></i>
+            <i class="fas fa-ruler"></i>
             <span>@lang('headings.common.units')</span>
         </a>
     </li>

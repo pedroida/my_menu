@@ -21,6 +21,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('product/{product}/thumbnail', [\App\Http\Controllers\ProductController::class, 'getThumb'])->name('product.thumb');
+
 Route::middleware(['auth'])->group(function () {
     /** Profile */
     Route::get('profile', 'ProfileController@index')->name('profile');
@@ -30,10 +32,12 @@ Route::middleware(['auth'])->group(function () {
         'categories' => \App\Http\Controllers\CategoryController::class,
         'units' => \App\Http\Controllers\UnitController::class,
         'users' => \App\Http\Controllers\UserController::class,
+        'products' => \App\Http\Controllers\ProductController::class,
     ]);
 
 
     Route::get('pagination/categories', [\App\Http\Controllers\CategoryController::class, 'pagination'])->name('pagination.categories');
     Route::get('pagination/units', [\App\Http\Controllers\UnitController::class, 'pagination'])->name('pagination.units');
     Route::get('pagination/users', [\App\Http\Controllers\UserController::class, 'pagination'])->name('pagination.users');
+    Route::get('pagination/products', [\App\Http\Controllers\ProductController::class, 'pagination'])->name('pagination.products');
 });

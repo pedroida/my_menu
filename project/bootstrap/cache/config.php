@@ -4,7 +4,7 @@
     'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
-    'url' => 'http://localhost',
+    'url' => 'http://localhost:8000',
     'asset_url' => NULL,
     'timezone' => 'America/Sao_Paulo',
     'locale' => 'pt-BR',
@@ -358,7 +358,7 @@
       array (
         'driver' => 'local',
         'root' => '/home/pedroida/development/personal/my_menu/project/storage/app/public',
-        'url' => 'http://localhost/storage',
+        'url' => 'http://localhost:8000/storage',
         'visibility' => 'public',
       ),
       's3' => 
@@ -370,6 +370,12 @@
         'bucket' => '',
         'url' => NULL,
         'endpoint' => NULL,
+      ),
+      'media' => 
+      array (
+        'driver' => 'local',
+        'root' => '/home/pedroida/development/personal/my_menu/project/storage/app',
+        'url' => 'http://localhost:8000',
       ),
     ),
     'links' => 
@@ -526,6 +532,77 @@
       ),
     ),
   ),
+  'medialibrary' => 
+  array (
+    'disk_name' => 'media',
+    'max_file_size' => 10485760,
+    'queue_name' => '',
+    'media_model' => 'Spatie\\MediaLibrary\\Models\\Media',
+    's3' => 
+    array (
+      'domain' => 'https://.s3.amazonaws.com',
+    ),
+    'remote' => 
+    array (
+      'extra_headers' => 
+      array (
+        'CacheControl' => 'max-age=604800',
+      ),
+    ),
+    'responsive_images' => 
+    array (
+      'width_calculator' => 'Spatie\\MediaLibrary\\ResponsiveImages\\WidthCalculator\\FileSizeOptimizedWidthCalculator',
+      'use_tiny_placeholders' => true,
+      'tiny_placeholder_generator' => 'Spatie\\MediaLibrary\\ResponsiveImages\\TinyPlaceholderGenerator\\Blurred',
+    ),
+    'url_generator' => NULL,
+    'version_urls' => false,
+    'path_generator' => NULL,
+    'image_optimizers' => 
+    array (
+      'Spatie\\ImageOptimizer\\Optimizers\\Jpegoptim' => 
+      array (
+        0 => '--strip-all',
+        1 => '--all-progressive',
+      ),
+      'Spatie\\ImageOptimizer\\Optimizers\\Pngquant' => 
+      array (
+        0 => '--force',
+      ),
+      'Spatie\\ImageOptimizer\\Optimizers\\Optipng' => 
+      array (
+        0 => '-i0',
+        1 => '-o2',
+        2 => '-quiet',
+      ),
+      'Spatie\\ImageOptimizer\\Optimizers\\Svgo' => 
+      array (
+        0 => '--disable=cleanupIDs',
+      ),
+      'Spatie\\ImageOptimizer\\Optimizers\\Gifsicle' => 
+      array (
+        0 => '-b',
+        1 => '-O3',
+      ),
+    ),
+    'image_generators' => 
+    array (
+      0 => 'Spatie\\MediaLibrary\\ImageGenerators\\FileTypes\\Image',
+      1 => 'Spatie\\MediaLibrary\\ImageGenerators\\FileTypes\\Webp',
+      2 => 'Spatie\\MediaLibrary\\ImageGenerators\\FileTypes\\Pdf',
+      3 => 'Spatie\\MediaLibrary\\ImageGenerators\\FileTypes\\Svg',
+      4 => 'Spatie\\MediaLibrary\\ImageGenerators\\FileTypes\\Video',
+    ),
+    'image_driver' => 'gd',
+    'ffmpeg_path' => '/usr/bin/ffmpeg',
+    'ffprobe_path' => '/usr/bin/ffprobe',
+    'temporary_directory_path' => NULL,
+    'jobs' => 
+    array (
+      'perform_conversions' => 'Spatie\\MediaLibrary\\Jobs\\PerformConversions',
+      'generate_responsive_images' => 'Spatie\\MediaLibrary\\Jobs\\GenerateResponsiveImages',
+    ),
+  ),
   'queue' => 
   array (
     'default' => 'sync',
@@ -672,77 +749,6 @@
   'image' => 
   array (
     'driver' => 'gd',
-  ),
-  'medialibrary' => 
-  array (
-    'disk_name' => 'public',
-    'max_file_size' => 10485760,
-    'queue_name' => '',
-    'media_model' => 'Spatie\\MediaLibrary\\Models\\Media',
-    's3' => 
-    array (
-      'domain' => 'https://.s3.amazonaws.com',
-    ),
-    'remote' => 
-    array (
-      'extra_headers' => 
-      array (
-        'CacheControl' => 'max-age=604800',
-      ),
-    ),
-    'responsive_images' => 
-    array (
-      'width_calculator' => 'Spatie\\MediaLibrary\\ResponsiveImages\\WidthCalculator\\FileSizeOptimizedWidthCalculator',
-      'use_tiny_placeholders' => true,
-      'tiny_placeholder_generator' => 'Spatie\\MediaLibrary\\ResponsiveImages\\TinyPlaceholderGenerator\\Blurred',
-    ),
-    'url_generator' => NULL,
-    'version_urls' => false,
-    'path_generator' => NULL,
-    'image_optimizers' => 
-    array (
-      'Spatie\\ImageOptimizer\\Optimizers\\Jpegoptim' => 
-      array (
-        0 => '--strip-all',
-        1 => '--all-progressive',
-      ),
-      'Spatie\\ImageOptimizer\\Optimizers\\Pngquant' => 
-      array (
-        0 => '--force',
-      ),
-      'Spatie\\ImageOptimizer\\Optimizers\\Optipng' => 
-      array (
-        0 => '-i0',
-        1 => '-o2',
-        2 => '-quiet',
-      ),
-      'Spatie\\ImageOptimizer\\Optimizers\\Svgo' => 
-      array (
-        0 => '--disable=cleanupIDs',
-      ),
-      'Spatie\\ImageOptimizer\\Optimizers\\Gifsicle' => 
-      array (
-        0 => '-b',
-        1 => '-O3',
-      ),
-    ),
-    'image_generators' => 
-    array (
-      0 => 'Spatie\\MediaLibrary\\ImageGenerators\\FileTypes\\Image',
-      1 => 'Spatie\\MediaLibrary\\ImageGenerators\\FileTypes\\Webp',
-      2 => 'Spatie\\MediaLibrary\\ImageGenerators\\FileTypes\\Pdf',
-      3 => 'Spatie\\MediaLibrary\\ImageGenerators\\FileTypes\\Svg',
-      4 => 'Spatie\\MediaLibrary\\ImageGenerators\\FileTypes\\Video',
-    ),
-    'image_driver' => 'gd',
-    'ffmpeg_path' => '/usr/bin/ffmpeg',
-    'ffprobe_path' => '/usr/bin/ffprobe',
-    'temporary_directory_path' => NULL,
-    'jobs' => 
-    array (
-      'perform_conversions' => 'Spatie\\MediaLibrary\\Jobs\\PerformConversions',
-      'generate_responsive_images' => 'Spatie\\MediaLibrary\\Jobs\\GenerateResponsiveImages',
-    ),
   ),
   'trustedproxy' => 
   array (

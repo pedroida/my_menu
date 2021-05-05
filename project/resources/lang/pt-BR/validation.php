@@ -179,5 +179,6 @@ return [
         'credentials' => 'firebase credentials',
         'send_at' => 'enviar em',
         'uniqid' => 'identificador',
+        'price' => 'preço'
     ],
 ];
