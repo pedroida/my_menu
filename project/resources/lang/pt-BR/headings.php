@@ -9,6 +9,7 @@ return [
         'categories' => 'Categorias',
         'units' => 'Unidades',
         'products' => 'Produtos',
+        'promotions' => 'Promoções',
     ],
 
     'auth' => [
@@ -23,6 +24,14 @@ return [
         'show' => 'Usuário :. Detalhes',
         'edit' => 'Usuário :. Edição',
         'create' => 'Usuário :. Novo',
+    ],
+
+    'promotions' => [
+        'label' => 'Promoções',
+        'index' => 'Promoções',
+        'show' => 'Promoção :. Detalhes',
+        'edit' => 'Promoção :. Edição',
+        'create' => 'Promoção :. Novo',
     ],
 
     'products' => [

@@ -3,7 +3,7 @@
 
 @section('page-header')
     <h1>
-        <i class="fas fa-building fa-fw mr-2 text-muted"></i>
+        <i class="fas fa-ruler fa-fw mr-2 text-muted"></i>
         @lang('headings.units.index')
     </h1>
 

@@ -45,7 +45,8 @@ mix.extract([
   'dayjs',
   'select2',
   'bs-custom-file-input',
-  'vue-chartjs'
+  'vue-chartjs',
+  'vue-multiselect'
 ]);
 
 // Versioning assets when production

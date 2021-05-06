@@ -54,7 +54,9 @@ return [
         'price' => 'Preço',
         'image' => 'Imagem',
         'select_image' => 'Selecionar imagem',
-        'thumb' => 'Thumbnail'
+        'thumb' => 'Thumbnail',
+        'valid_from' => 'Válido de',
+        'valid_until' => 'Válido até',
     ],
 
     'stays' => [

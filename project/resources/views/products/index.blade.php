@@ -3,7 +3,7 @@
 
 @section('page-header')
     <h1>
-        <i class="fas fa-building fa-fw mr-2 text-muted"></i>
+        <i class="fas fa-store fa-fw mr-2 text-muted"></i>
         @lang('headings.products.index')
     </h1>
 

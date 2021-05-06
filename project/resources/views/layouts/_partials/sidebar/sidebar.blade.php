@@ -7,7 +7,7 @@
     </div>
 
     <div class="sidebar-brand sidebar-brand-sm">
-      <a href="{{ route('home') }}"><img src="/assets/img/favicon.ico" alt=""></a>
+      <a href="{{ route('home') }}"><img src="/assets/img/favicon.ico" alt="" style="max-width: 80%"></a>
     </div>
 
       @include('layouts._partials.sidebar._partials.admin')

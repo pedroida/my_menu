@@ -26,6 +26,10 @@ return [
         'index' => 'Produtos'
     ],
 
+    'promotions' => [
+        'index' => 'Promoções'
+    ],
+
     'profile' => [
         'index' => 'Perfil'
     ],

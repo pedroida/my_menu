@@ -18,6 +18,14 @@
         </a>
     </li>
 
+    <li class="{{ is_active('promotions.index') }}">
+        <a class="nav-link" href="{{ route('promotions.index') }}" data-toggle="tooltip" data-placement="right"
+           title="@lang('headings.common.promotions')">
+            <i class="fas fa-percent"></i>
+            <span>@lang('headings.common.promotions')</span>
+        </a>
+    </li>
+
     <li class="{{ is_active('products.index') }}">
         <a class="nav-link" href="{{ route('products.index') }}" data-toggle="tooltip" data-placement="right"
            title="@lang('headings.common.products')">

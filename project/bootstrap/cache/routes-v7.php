@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::gR64w1azuA0ueLDg',
+            '_route' => 'generated::9cHwcNsOln5GSCqP',
           ),
           1 => NULL,
           2 => 
@@ -44,7 +44,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::zPImSpSxZx3p80I0',
+            '_route' => 'generated::fQKDK9QwpFCGhShV',
           ),
           1 => NULL,
           2 => 
@@ -81,7 +81,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::nVCVjEIdFQbzGCzX',
+            '_route' => 'generated::5M0wTtJSHxg7WLIB',
           ),
           1 => NULL,
           2 => 
@@ -136,7 +136,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::1MK5rWhjmFMjcya1',
+            '_route' => 'generated::vzcanA6g86JYqByD',
           ),
           1 => NULL,
           2 => 
@@ -227,7 +227,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::DVYPHedRBJS5rXZp',
+            '_route' => 'generated::tiRPF3d85lU0H5kc',
           ),
           1 => NULL,
           2 => 
@@ -520,6 +520,62 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/promotions' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'promotions.index',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'promotions.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/promotions/create' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'promotions.create',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/pagination/categories' => 
       array (
         0 => 
@@ -600,10 +656,30 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/pagination/promotions' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'pagination.promotions',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
     ),
     2 => 
     array (
-      0 => '{^(?|/p(?|assword/reset/([^/]++)(*:34)|roduct(?|/([^/]++)/thumbnail(*:69)|s/([^/]++)(?|(*:89)|/edit(*:101)|(*:109))))|/categories/([^/]++)(?|(*:143)|/edit(*:156)|(*:164))|/u(?|nits/([^/]++)(?|(*:194)|/edit(*:207)|(*:215))|sers/([^/]++)(?|(*:240)|/edit(*:253)|(*:261))))/?$}sDu',
+      0 => '{^(?|/p(?|assword/reset/([^/]++)(*:34)|ro(?|duct(?|/([^/]++)/thumbnail(*:72)|s/([^/]++)(?|(*:92)|/edit(*:104)|(*:112)))|motions/([^/]++)(?|(*:141)|/edit(*:154)|(*:162))))|/categories/([^/]++)(?|(*:196)|/edit(*:209)|(*:217))|/u(?|nits/([^/]++)(?|(*:247)|/edit(*:260)|(*:268))|sers/([^/]++)(?|(*:293)|/edit(*:306)|(*:314))))/?$}sDu',
     ),
     3 => 
     array (
@@ -630,7 +706,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      69 => 
+      72 => 
       array (
         0 => 
         array (
@@ -653,7 +729,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      89 => 
+      92 => 
       array (
         0 => 
         array (
@@ -676,7 +752,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      101 => 
+      104 => 
       array (
         0 => 
         array (
@@ -699,7 +775,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      109 => 
+      112 => 
       array (
         0 => 
         array (
@@ -741,7 +817,95 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      143 => 
+      141 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'promotions.show',
+          ),
+          1 => 
+          array (
+            0 => 'promotion',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      154 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'promotions.edit',
+          ),
+          1 => 
+          array (
+            0 => 'promotion',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      162 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'promotions.update',
+          ),
+          1 => 
+          array (
+            0 => 'promotion',
+          ),
+          2 => 
+          array (
+            'PUT' => 0,
+            'PATCH' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'promotions.destroy',
+          ),
+          1 => 
+          array (
+            0 => 'promotion',
+          ),
+          2 => 
+          array (
+            'DELETE' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      196 => 
       array (
         0 => 
         array (
@@ -764,7 +928,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      156 => 
+      209 => 
       array (
         0 => 
         array (
@@ -787,7 +951,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      164 => 
+      217 => 
       array (
         0 => 
         array (
@@ -829,7 +993,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      194 => 
+      247 => 
       array (
         0 => 
         array (
@@ -852,7 +1016,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      207 => 
+      260 => 
       array (
         0 => 
         array (
@@ -875,7 +1039,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      215 => 
+      268 => 
       array (
         0 => 
         array (
@@ -917,7 +1081,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      240 => 
+      293 => 
       array (
         0 => 
         array (
@@ -940,7 +1104,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      253 => 
+      306 => 
       array (
         0 => 
         array (
@@ -963,7 +1127,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      261 => 
+      314 => 
       array (
         0 => 
         array (
@@ -1020,7 +1184,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::gR64w1azuA0ueLDg' => 
+    'generated::9cHwcNsOln5GSCqP' => 
     array (
       'methods' => 
       array (
@@ -1035,15 +1199,15 @@ app('router')->setCompiledRoutes(
           0 => 'api',
           1 => 'auth:api',
         ),
-        'uses' => 'C:32:"Opis\\Closure\\SerializableClosure":289:{@zTdAwXovfAUhM930JFAMvir32bGTGwUzHfQi+Dmb2/E=.a:5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
+        'uses' => 'C:32:"Opis\\Closure\\SerializableClosure":289:{@3wZzjRTAulnmOnD50fH3tcbRVtsXutm1Cl5Hlb+SkRY=.a:5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"0000000060bdbd14000000004b015fbb";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000005bafbc5e000000000e42b3e2";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::gR64w1azuA0ueLDg',
+        'as' => 'generated::9cHwcNsOln5GSCqP',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1058,7 +1222,7 @@ app('router')->setCompiledRoutes(
       'lockSeconds' => NULL,
       'waitSeconds' => NULL,
     ),
-    'generated::zPImSpSxZx3p80I0' => 
+    'generated::fQKDK9QwpFCGhShV' => 
     array (
       'methods' => 
       array (
@@ -1072,15 +1236,15 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'uses' => 'C:32:"Opis\\Closure\\SerializableClosure":256:{@/fNysNJVMzwp/R6KeI8xhAIRqsOs/Z6cjpzOvi2fMhY=.a:5:{s:3:"use";a:0:{}s:8:"function";s:44:"function () {
+        'uses' => 'C:32:"Opis\\Closure\\SerializableClosure":256:{@tfcYV6geR33zNiuaRCHB6laY32uDU9kBp9A4H1SwVxk=.a:5:{s:3:"use";a:0:{}s:8:"function";s:44:"function () {
     return \\view(\'welcome\');
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"0000000060bdbd12000000004b015fbb";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000005bafbc58000000000e42b3e2";}}',
         'namespace' => NULL,
         'prefix' => NULL,
         'where' => 
         array (
         ),
-        'as' => 'generated::zPImSpSxZx3p80I0',
+        'as' => 'generated::fQKDK9QwpFCGhShV',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1131,7 +1295,7 @@ app('router')->setCompiledRoutes(
       'lockSeconds' => NULL,
       'waitSeconds' => NULL,
     ),
-    'generated::nVCVjEIdFQbzGCzX' => 
+    'generated::5M0wTtJSHxg7WLIB' => 
     array (
       'methods' => 
       array (
@@ -1151,7 +1315,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::nVCVjEIdFQbzGCzX',
+        'as' => 'generated::5M0wTtJSHxg7WLIB',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1237,7 +1401,7 @@ app('router')->setCompiledRoutes(
       'lockSeconds' => NULL,
       'waitSeconds' => NULL,
     ),
-    'generated::1MK5rWhjmFMjcya1' => 
+    'generated::vzcanA6g86JYqByD' => 
     array (
       'methods' => 
       array (
@@ -1257,7 +1421,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::1MK5rWhjmFMjcya1',
+        'as' => 'generated::vzcanA6g86JYqByD',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1450,7 +1614,7 @@ app('router')->setCompiledRoutes(
       'lockSeconds' => NULL,
       'waitSeconds' => NULL,
     ),
-    'generated::DVYPHedRBJS5rXZp' => 
+    'generated::tiRPF3d85lU0H5kc' => 
     array (
       'methods' => 
       array (
@@ -1470,7 +1634,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::DVYPHedRBJS5rXZp',
+        'as' => 'generated::tiRPF3d85lU0H5kc',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2658,6 +2822,263 @@ app('router')->setCompiledRoutes(
       'lockSeconds' => NULL,
       'waitSeconds' => NULL,
     ),
+    'promotions.index' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'promotions',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'promotions.index',
+        'uses' => 'App\\Http\\Controllers\\PromotionController@index',
+        'controller' => 'App\\Http\\Controllers\\PromotionController@index',
+        'namespace' => NULL,
+        'prefix' => NULL,
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'promotions.create' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'promotions/create',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'promotions.create',
+        'uses' => 'App\\Http\\Controllers\\PromotionController@create',
+        'controller' => 'App\\Http\\Controllers\\PromotionController@create',
+        'namespace' => NULL,
+        'prefix' => NULL,
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'promotions.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'promotions',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'promotions.store',
+        'uses' => 'App\\Http\\Controllers\\PromotionController@store',
+        'controller' => 'App\\Http\\Controllers\\PromotionController@store',
+        'namespace' => NULL,
+        'prefix' => NULL,
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'promotions.show' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'promotions/{promotion}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'promotions.show',
+        'uses' => 'App\\Http\\Controllers\\PromotionController@show',
+        'controller' => 'App\\Http\\Controllers\\PromotionController@show',
+        'namespace' => NULL,
+        'prefix' => NULL,
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'promotions.edit' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'promotions/{promotion}/edit',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'promotions.edit',
+        'uses' => 'App\\Http\\Controllers\\PromotionController@edit',
+        'controller' => 'App\\Http\\Controllers\\PromotionController@edit',
+        'namespace' => NULL,
+        'prefix' => NULL,
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'promotions.update' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'PUT',
+        1 => 'PATCH',
+      ),
+      'uri' => 'promotions/{promotion}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'promotions.update',
+        'uses' => 'App\\Http\\Controllers\\PromotionController@update',
+        'controller' => 'App\\Http\\Controllers\\PromotionController@update',
+        'namespace' => NULL,
+        'prefix' => NULL,
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'promotions.destroy' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'DELETE',
+      ),
+      'uri' => 'promotions/{promotion}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'as' => 'promotions.destroy',
+        'uses' => 'App\\Http\\Controllers\\PromotionController@destroy',
+        'controller' => 'App\\Http\\Controllers\\PromotionController@destroy',
+        'namespace' => NULL,
+        'prefix' => NULL,
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
     'pagination.categories' => 
     array (
       'methods' => 
@@ -2792,6 +3213,43 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'pagination.products',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+    ),
+    'pagination.promotions' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'pagination/promotions',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\PromotionController@pagination',
+        'controller' => 'App\\Http\\Controllers\\PromotionController@pagination',
+        'namespace' => NULL,
+        'prefix' => NULL,
+        'where' => 
+        array (
+        ),
+        'as' => 'pagination.promotions',
       ),
       'fallback' => false,
       'defaults' => 

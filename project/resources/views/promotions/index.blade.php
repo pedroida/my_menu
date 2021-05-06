@@ -1,10 +1,10 @@
 @extends('layouts.app')
-@section('title', __('headings.categories.index'))
+@section('title', __('headings.promotions.index'))
 
 @section('page-header')
     <h1>
-        <i class="fas fa-tags fa-fw mr-2 text-muted"></i>
-        @lang('headings.categories.index')
+        <i class="fas fa-percent fa-fw mr-2 text-muted"></i>
+        @lang('headings.promotions.index')
     </h1>
 
     <breadcrumb>
@@ -13,16 +13,16 @@
         </breadcrumb-item>
 
         <breadcrumb-item active>
-            @lang('breadcrumb.categories.index')
+            @lang('breadcrumb.promotions.index')
         </breadcrumb-item>
     </breadcrumb>
 @endsection
 
 @section('content')
     <data-list
-        data-source="{{ route('pagination.categories') }}"
+        data-source="{{ route('pagination.promotions') }}"
         delete-message="@lang('flash.common.confirmation.destroy')"
-        url-create="{{ route('categories.create') }}"
+        url-create="{{ route('promotions.create') }}"
         label-create="@lang('links.common.create')"
     />
 
@@ -43,7 +43,7 @@
                     <div class="table-responsive">
                         <table class="table table-striped table-md table-vcenter mb-0">
                             <thead>
-                                @include('categories._partials.head')
+                                @include('promotions._partials.head')
                             </thead>
                             <tbody>
                                 <tr v-if="emptyResult">
@@ -51,7 +51,7 @@
                                 </tr>
                                 <template v-else>
                                     <tr v-for="(item, index) in items" :key="index">
-                                        @include('categories._partials.body')
+                                        @include('promotions._partials.body')
                                     </tr>
                                 </template>
                             </tbody>

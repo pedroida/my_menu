@@ -23,7 +23,7 @@ class Product extends Model implements HasMedia
 
     protected $searchBy = ['name', 'description'];
 
-    protected $fillable = ['name', 'description', 'price', 'category_id', 'unit_id'];
+    protected $fillable = ['name', 'description', 'price', 'category_id', 'unit_id', 'promotion_id'];
 
     public function category()
     {
@@ -33,6 +33,11 @@ class Product extends Model implements HasMedia
     public function unit()
     {
         return $this->belongsTo(Unit::class);
+    }
+
+    public function promotion()
+    {
+        return $this->belongsTo(Promotion::class);
     }
 
     public function setPriceAttribute($value)

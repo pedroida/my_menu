@@ -33,6 +33,7 @@ Route::middleware(['auth'])->group(function () {
         'units' => \App\Http\Controllers\UnitController::class,
         'users' => \App\Http\Controllers\UserController::class,
         'products' => \App\Http\Controllers\ProductController::class,
+        'promotions' => \App\Http\Controllers\PromotionController::class,
     ]);
 
 
@@ -40,4 +41,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('pagination/units', [\App\Http\Controllers\UnitController::class, 'pagination'])->name('pagination.units');
     Route::get('pagination/users', [\App\Http\Controllers\UserController::class, 'pagination'])->name('pagination.users');
     Route::get('pagination/products', [\App\Http\Controllers\ProductController::class, 'pagination'])->name('pagination.products');
+    Route::get('pagination/promotions', [\App\Http\Controllers\PromotionController::class, 'pagination'])->name('pagination.promotions');
 });
