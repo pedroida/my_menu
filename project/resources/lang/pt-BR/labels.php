@@ -57,6 +57,7 @@ return [
         'thumb' => 'Thumbnail',
         'valid_from' => 'Válido de',
         'valid_until' => 'Válido até',
+        'value' => 'Valor/%'
     ],
 
     'stays' => [
