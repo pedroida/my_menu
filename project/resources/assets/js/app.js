@@ -19,6 +19,19 @@ const app = new Vue({
       ptBr: ptBr,
     }
   },
+
+  methods: {
+    flashMessage(type, message) {
+      this.$swal({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        type: type,
+        title: message
+      });
+    },
+  }
 });
 
 Vue.use(VueSweetalert2);

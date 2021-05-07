@@ -564,3 +564,8 @@ function diff_between_value_and_paid($value, $paid)
 {
     return ($value > 0) ? (($paid * 100) / $value) - 100 : 0;
 }
+
+function store(): \App\Models\Store
+{
+    return \App\Models\Store::firstOrCreate();
+}

@@ -22,3 +22,7 @@ Vue.component('import-spreadsheet', require('@/components/ImportSpreadsheet.vue'
 Vue.component('admin-dashboard', require('@/components/AdminDashboard.vue'));
 
 Vue.component('promotion-form', require('@/components/PromotionForm.vue'));
+
+Vue.component('qrcode', require('@/components/Qrcode.vue'));
+
+Vue.component('whatsapp', require('@/components/Whatsapp.vue'));

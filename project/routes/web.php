@@ -22,6 +22,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('product/{product}/thumbnail', [\App\Http\Controllers\ProductController::class, 'getThumb'])->name('product.thumb');
+Route::get('store/banner', [\App\Http\Controllers\HomeController::class, 'getBanner'])->name('store.banner');
 
 Route::middleware(['auth'])->group(function () {
     /** Profile */
@@ -35,6 +36,9 @@ Route::middleware(['auth'])->group(function () {
         'products' => \App\Http\Controllers\ProductController::class,
         'promotions' => \App\Http\Controllers\PromotionController::class,
     ]);
+
+    Route::post('store/whatsapp', [\App\Http\Controllers\HomeController::class, 'updateWhatsapp'])->name('whatsapp.update');
+    Route::post('banner/update', [\App\Http\Controllers\HomeController::class, 'bannerUpdate'])->name('banner.update');
 
 
     Route::get('pagination/categories', [\App\Http\Controllers\CategoryController::class, 'pagination'])->name('pagination.categories');
