@@ -81,13 +81,15 @@ class Product extends Model implements HasMedia
 
     public function getThumbnailAttribute()
     {
-        $path = $this->getFirstMediaUrl('image', 'thumbnail');
-        return Storage::get($path);
+        $media = $this->getFirstMedia('image');
+        $path = Storage::disk('local')->files($media->id . '/conversions')[0];
+        return Storage::disk('local')->get($path);
     }
 
     public function getImageAttribute()
     {
-        return $this->getFirstMediaUrl('image');
+        $media = $this->getFirstMedia('image');
+        return Storage::disk('local')->get($media->id . '/' . $media->file_name);
     }
 
     public function registerMediaCollections()

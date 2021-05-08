@@ -11,6 +11,7 @@ use App\Repositories\Criterias\Common\When;
 use App\Repositories\Criterias\Common\WhereHas;
 use App\Repositories\Criterias\Common\With;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class StoreController extends Controller
 {
@@ -21,7 +22,7 @@ class StoreController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except(['getBanner']);
+        $this->middleware('auth')->only(['index', 'updateWhatsapp', 'bannerUpdate']);
     }
 
     /**
@@ -38,6 +39,7 @@ class StoreController extends Controller
     {
         $whatsapp = $request->get('whatsapp');
         store()->update(['whatsapp' => $whatsapp]);
+        Cache::forget('store-data');
 
         return $this->chooseReturn('success', _m('common.success.update'));
     }
@@ -45,6 +47,7 @@ class StoreController extends Controller
     public function bannerUpdate(Request $request)
     {
         store()->addMediaFromRequest('banner')->toMediaCollection('banner');
+        Cache::forget('store-data');
         return $this->chooseReturn('success', _m('common.success.update'), route('home'));
     }
 
@@ -76,7 +79,7 @@ class StoreController extends Controller
                     return $query->where('category_id', $category);
                 })
             ])
-            ->perPage(30)
+            ->perPage(100)
             ->defaultOrderBy('name', 'asc');
 
         return $pagination->build();

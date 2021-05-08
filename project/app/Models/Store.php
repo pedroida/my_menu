@@ -35,7 +35,7 @@ class Store extends Model implements HasMedia
 
     public function getBannerAttribute()
     {
-        $path = $this->getFirstMediaUrl('banner');
-        return Storage::get($path);
+        $media = $this->getFirstMedia('banner');
+        return Storage::disk('local')->get($media->id . '/' . $media->file_name);
     }
 }

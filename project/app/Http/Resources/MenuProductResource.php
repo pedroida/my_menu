@@ -18,6 +18,19 @@ class MenuProductResource extends JsonResource
             'unit' => $this->unit->name,
             'thumbnail' => route('product.thumb', $this->resource),
             'created_at' => format_date($this->created_at),
+            'whatsapp_request' => $this->getWhatsUrl(),
         ];
+    }
+
+    private function getWhatsUrl()
+    {
+        if (!store()->whatsapp)
+            return null;
+
+        $whatsapp = preg_replace('/\W/', '', store()->whatsapp);
+        $whatsapp = '55' . $whatsapp;
+        $text = urlencode('Gostaria de pedir um(a): ' . $this->name);
+
+        return "https://wa.me/{$whatsapp}/?text={$text}";
     }
 }

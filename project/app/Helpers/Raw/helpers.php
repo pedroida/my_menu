@@ -551,15 +551,6 @@ function is_valid_url(string $url)
     return (bool) filter_var($url, FILTER_VALIDATE_URL);
 }
 
-/**
- * Get current version of application
- * @return string
- */
-function app_version()
-{
-    return \BitblueAdmin\Helpers\ChangeLogHelper::getCurrentVersion();
-}
-
 function diff_between_value_and_paid($value, $paid)
 {
     return ($value > 0) ? (($paid * 100) / $value) - 100 : 0;
@@ -567,5 +558,7 @@ function diff_between_value_and_paid($value, $paid)
 
 function store(): \App\Models\Store
 {
-    return \App\Models\Store::firstOrCreate();
+    return cache_manager('store-data', '1 day', function () {
+        return \App\Models\Store::firstOrCreate();
+    }, ['store-data']);
 }

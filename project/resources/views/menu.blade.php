@@ -58,7 +58,6 @@
                 <div class="section-body">
 
                     <div class="container">
-
                         <store-menu
                                 menu-url="{{ route('store.pagination') }}"
                                 categories-url="{{ route('store.categories') }}">

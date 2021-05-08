@@ -61,11 +61,16 @@ export default {
 .btn-category {
   font-family: 'Nunito';
   font-size: 1.5em;
-  background-color: #ffffff;
+  background-color: #f44336 !important;
+  color: #ffffff !important;
+  transition: .3s;
 
   &:hover, &:active, &.active {
-    background-color: #f44336 !important;
-    color: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #f44336 !important;
+    border-color: #f44336 !important;
+    box-shadow: 4px 4px 4px 2px grey;
+    transition: .3s;
   }
 }
 

@@ -1,11 +1,11 @@
 <template>
   <div class="col-12 col-md-6">
-    <div class="card card-main d-flex align-items-center product-card">
+    <div class="card card-hover card-main d-flex align-items-center product-card">
 
       <div v-if="product.promotional_price" class="ribbon"><span>Promoção</span></div>
 
       <div class="thumb">
-        <img :src="product.thumbnail" :alt="product.name">
+        <img loading=lazy :src="product.thumbnail" :alt="product.name">
       </div>
       <div class="card-body">
         <h3>{{ product.name }}</h3>
@@ -14,6 +14,11 @@
           R$ {{ product.price }}
         </span>
         <span v-if="product.promotional_price" class="price">R$ {{ product.promotional_price }}</span>
+
+        <a :href="product.whatsapp_request" class="whatsapp" target="_blank">
+          <i class="fab fa-whatsapp fa-2x"></i>
+        </a>
+
       </div>
     </div>
   </div>
@@ -53,6 +58,7 @@ export default {
 }
 
 .thumb {
+  min-width: 40%;
   max-width: 40%;
   max-height: 100%;
 
@@ -104,6 +110,22 @@ export default {
   border-right: 3px solid #f44336;
   border-bottom: 3px solid transparent;
   border-top: 3px solid #f44336;
+}
+
+.whatsapp {
+  position: absolute;
+  bottom: .5rem;
+  right: .5rem;
+  background-color: #05d755;
+  border-radius: 50%;
+  color: white;
+  width: 3em;
+  height: 3em;
+
+  i {
+    font-size: 2em !important;
+    margin: 7px 9px !important;
+  }
 }
 
 </style>
