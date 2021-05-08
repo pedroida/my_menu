@@ -1,0 +1,51 @@
+$maincolor: #f44336;
+
+.main-content {
+  padding: 0;
+
+  .banner-section {
+
+    box-shadow: 1px 1px 20px 5px #333840d9;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.store-name {
+  font-family: 'Lobster';
+  color: #000000;
+  font-size: 5em;
+}
+
+.bg-main {
+  background-color: $maincolor;
+}
+
+.color-main {
+  color: $maincolor;
+}
+
+.border-main {
+  border-color: $maincolor;
+}
+
+.card-main {
+  border-top: 2px solid $maincolor;
+}
+
+.parallax {
+  /* The image used */
+  //background-image: url('https://i.pinimg.com/originals/5e/9b/30/5e9b30a6a5698fadbd23ec2f4fed7a14.jpg');
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body, html {
+  height: 100%;
+}

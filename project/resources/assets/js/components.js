@@ -26,3 +26,5 @@ Vue.component('promotion-form', require('@/components/PromotionForm.vue'));
 Vue.component('qrcode', require('@/components/Qrcode.vue'));
 
 Vue.component('whatsapp', require('@/components/Whatsapp.vue'));
+
+Vue.component('store-menu', require('@/components/StoreMenu.vue'));

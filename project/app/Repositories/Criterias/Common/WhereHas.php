@@ -7,15 +7,15 @@ use App\Repositories\Repository;
 
 class WhereHas extends Criteria
 {
-    private $role = null;
+    private $relationship;
 
-    public function __construct($role)
+    public function __construct($relationship)
     {
-        $this->role = $role;
+        $this->relationship = $relationship;
     }
 
     public function apply($queryBuilder, Repository $repository)
     {
-        return $queryBuilder->whereHas("roles", function($q){ $q->where("name", $this->role); });
+        return $queryBuilder->whereHas($this->relationship);
     }
 }

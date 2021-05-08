@@ -2,5 +2,6 @@
     "/assets/js/vendor.js": "/assets/js/vendor.js",
     "/assets/js/app.js": "/assets/js/app.js",
     "/assets/css/app.css": "/assets/css/app.css",
+    "/assets/css/menu.css": "/assets/css/menu.css",
     "/assets/js/manifest.js": "/assets/js/manifest.js"
 }

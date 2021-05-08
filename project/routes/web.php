@@ -13,16 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\MenuController::class, '__invoke']);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\StoreController::class, 'index'])->name('home');
 
 Route::get('product/{product}/thumbnail', [\App\Http\Controllers\ProductController::class, 'getThumb'])->name('product.thumb');
-Route::get('store/banner', [\App\Http\Controllers\HomeController::class, 'getBanner'])->name('store.banner');
+Route::get('store/banner', [\App\Http\Controllers\StoreController::class, 'getBanner'])->name('store.banner');
+
+Route::get('store/categories', [\App\Http\Controllers\StoreController::class, 'getCategories'])->name('store.categories');
+
+Route::get('store/menu/products', [\App\Http\Controllers\StoreController::class, 'pagination'])->name('store.menu.pagination');
 
 Route::middleware(['auth'])->group(function () {
     /** Profile */
@@ -37,8 +39,8 @@ Route::middleware(['auth'])->group(function () {
         'promotions' => \App\Http\Controllers\PromotionController::class,
     ]);
 
-    Route::post('store/whatsapp', [\App\Http\Controllers\HomeController::class, 'updateWhatsapp'])->name('whatsapp.update');
-    Route::post('banner/update', [\App\Http\Controllers\HomeController::class, 'bannerUpdate'])->name('banner.update');
+    Route::post('store/whatsapp', [\App\Http\Controllers\StoreController::class, 'updateWhatsapp'])->name('whatsapp.update');
+    Route::post('banner/update', [\App\Http\Controllers\StoreController::class, 'bannerUpdate'])->name('banner.update');
 
 
     Route::get('pagination/categories', [\App\Http\Controllers\CategoryController::class, 'pagination'])->name('pagination.categories');

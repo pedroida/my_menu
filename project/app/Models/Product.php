@@ -54,6 +54,26 @@ class Product extends Model implements HasMedia
         return number_format($this->attributes['price'] / 100, '2', ',', '.');
     }
 
+    public function getPromotionalPriceAttribute()
+    {
+        if(!$this->promotion || !$this->promotion->is_active)
+            return null;
+
+        $price = $this->attributes['price'] / 100;
+        $promotionValue = $this->promotion->getValueToCalculate();
+
+        if($this->promotion->isValueToDiscount()) {
+            $price -= $promotionValue;
+        } else {
+            $discountValue = $price * ($promotionValue / 100);
+            $price -= $discountValue;
+        }
+
+        $price = ($price >= 0) ? $price : 0;
+
+        return number_format($price, '2', ',', '.');
+    }
+
     public function getCompoundNameAttribute()
     {
         return $this->name . ' (' . $this->category->name . '/' . $this->unit->name . ')';
