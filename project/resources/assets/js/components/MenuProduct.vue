@@ -122,6 +122,10 @@ export default {
   width: 3em;
   height: 3em;
 
+  &:hover {
+    background-color: #0a8e3b;
+  }
+
   i {
     font-size: 2em !important;
     margin: 7px 9px !important;
