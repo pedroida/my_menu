@@ -33,7 +33,7 @@
     <div class="main-wrapper main-wrapper-1">
         <!-- Main Content -->
         <div class="main-content parallax">
-            @if(store()->banner)
+            @if($singletonStore->banner)
                 <section class="section banner-section">
                     <img src="{{ route('store.banner') }}" alt="">
                 </section>
@@ -59,7 +59,7 @@
 
                     <div class="container">
                         <store-menu
-                                menu-url="{{ route('store.pagination') }}"
+                                menu-url="{{ route('store.menu.pagination') }}"
                                 categories-url="{{ route('store.categories') }}">
                         </store-menu>
 

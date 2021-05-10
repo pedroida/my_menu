@@ -12,12 +12,16 @@
 
                     <div class="card-body">
                         <div class="row">
+                            <div class="col-12 d-flex align-items-center text-center">
+                                <h5>Visitas ao cardápio: <strong>{{ $singletonStore->visits_count }}</strong></h5>
+                            </div>
+
                             <div class="col-12 col-md-4 d-flex align-items-center text-center">
                                 <qrcode url="{{ config('app.url') }}"></qrcode>
                             </div>
                             <div class="col-12 col-md-4 d-flex align-items-center text-center mt-md-0 mt5">
                                 <whatsapp update-url="{{ route('whatsapp.update') }}"
-                                          whats="{{ store()->whatsapp }}"></whatsapp>
+                                          whats="{{ $singletonStore->whatsapp }}"></whatsapp>
                             </div>
 
                             <div class="col-12 col-md-4">

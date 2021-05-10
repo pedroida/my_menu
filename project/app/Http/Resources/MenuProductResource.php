@@ -3,10 +3,14 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\Str;
 
 class MenuProductResource extends JsonResource
 {
+    public function __construct($resource)
+    {
+        parent::__construct($resource);
+    }
+
     public function toArray($request)
     {
         return [

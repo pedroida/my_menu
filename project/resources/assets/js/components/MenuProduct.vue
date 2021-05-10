@@ -4,8 +4,8 @@
 
       <div v-if="product.promotional_price" class="ribbon"><span>Promoção</span></div>
 
-      <div class="thumb">
-        <img loading=lazy :src="product.thumbnail" :alt="product.name">
+      <div class="thumb d-grid">
+        <img loading=lazy :src="product.thumbnail" :alt="product.name" class="m-auto">
       </div>
       <div class="card-body">
         <h3>{{ product.name }}</h3>
@@ -64,7 +64,7 @@ export default {
 
   img {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 80%;
   }
 }
 

@@ -16,7 +16,7 @@ class Store extends Model implements HasMedia
 
     protected $table = 'store';
 
-    protected $fillable = ['whatsapp'];
+    protected $fillable = ['whatsapp', 'visits_count'];
 
     public function registerMediaCollections()
     {
@@ -36,6 +36,7 @@ class Store extends Model implements HasMedia
     public function getBannerAttribute()
     {
         $media = $this->getFirstMedia('banner');
-        return Storage::disk('local')->get($media->id . '/' . $media->file_name);
+        if($media)
+            return Storage::disk('local')->get($media->id . '/' . $media->file_name);
     }
 }

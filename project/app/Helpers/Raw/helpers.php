@@ -9,11 +9,11 @@ use Illuminate\Support\Str;
 /**
  *  Resolve o resultado de uma chave de cache e retorna seu valor. Caso chamado
  * sem nenhum argumento, retorna uma instancia de \App\Helpers\CacheManager.
- * @param  string   $key   Chave de cache
- * @param  string   $ttl   Tempo de duração do cache. Ver guia de formatos
+ * @param string $key Chave de cache
+ * @param string $ttl Tempo de duração do cache. Ver guia de formatos
  * relativos em http://php.net/manual/pt_BR/datetime.formats.relative.php
- * @param  callable $value Valor a ser criado cache
- * @param  array    $tags  Marcações para a chave de cache
+ * @param callable $value Valor a ser criado cache
+ * @param array $tags Marcações para a chave de cache
  * @return mixed
  */
 function cache_manager()
@@ -475,9 +475,9 @@ if (!function_exists('cached_include')) {
      * patterns.
      *     Ex: Cache::clear('cache:partials:myview_*');
      *
-     * @param  string $view The name of the view that are going to be included.
-     * @param  array $vars Variables that are being passed to the view.
-     * @param  integer $time The amount of minutes that the result of the view is going to be stored.
+     * @param string $view The name of the view that are going to be included.
+     * @param array $vars Variables that are being passed to the view.
+     * @param integer $time The amount of minutes that the result of the view is going to be stored.
      *
      * @return string             Html code of the included view
      */
@@ -525,9 +525,9 @@ function output_if($condition, $output)
 /**
  * Retrieve a value based on a given condition.
  *
- * @param  bool $condition
- * @param  mixed $value
- * @param  mixed $default
+ * @param bool $condition
+ * @param mixed $value
+ * @param mixed $default
  * @return mixed
  */
 function when($condition, $value, $default = null)
@@ -543,12 +543,12 @@ function when($condition, $value, $default = null)
 
 /**
  * Validate if param is a valid URL;
- * @param  string $uil
+ * @param string $uil
  * @return boolean
  */
 function is_valid_url(string $url)
 {
-    return (bool) filter_var($url, FILTER_VALIDATE_URL);
+    return (bool)filter_var($url, FILTER_VALIDATE_URL);
 }
 
 function diff_between_value_and_paid($value, $paid)
@@ -556,9 +556,9 @@ function diff_between_value_and_paid($value, $paid)
     return ($value > 0) ? (($paid * 100) / $value) - 100 : 0;
 }
 
-function store(): \App\Models\Store
+function store(): \App\Models\SingletonStore
 {
     return cache_manager('store-data', '1 day', function () {
-        return \App\Models\Store::firstOrCreate();
+        return \App\Models\SingletonStore::first();
     }, ['store-data']);
 }

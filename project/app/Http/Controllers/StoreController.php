@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\MenuProductResource;
 use App\Models\Product;
+use App\Models\SingletonStore;
 use App\Repositories\BaseRepository;
 use App\Repositories\CategoryRepository;
 use App\Repositories\Criterias\Common\OrderBy;
@@ -15,13 +16,15 @@ use Illuminate\Support\Facades\Cache;
 
 class StoreController extends Controller
 {
+    private $singletonStore;
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(SingletonStore $singletonStore)
     {
+        $this->singletonStore = $singletonStore;
         $this->middleware('auth')->only(['index', 'updateWhatsapp', 'bannerUpdate']);
     }
 
@@ -32,13 +35,14 @@ class StoreController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $singletonStore = $this->singletonStore;
+        return view('home', compact('singletonStore'));
     }
 
     public function updateWhatsapp(Request $request)
     {
         $whatsapp = $request->get('whatsapp');
-        store()->update(['whatsapp' => $whatsapp]);
+        $this->singletonStore->update(['whatsapp' => $whatsapp]);
         Cache::forget('store-data');
 
         return $this->chooseReturn('success', _m('common.success.update'));
@@ -46,14 +50,14 @@ class StoreController extends Controller
 
     public function bannerUpdate(Request $request)
     {
-        store()->addMediaFromRequest('banner')->toMediaCollection('banner');
+        $this->singletonStore->addMediaFromRequest('banner')->toMediaCollection('banner');
         Cache::forget('store-data');
         return $this->chooseReturn('success', _m('common.success.update'), route('home'));
     }
 
     public function getBanner()
     {
-        return response(store()->banner, 200, ['Content-Type:image/*']);
+        return response($this->singletonStore->banner, 200, ['Content-Type:image/*']);
 
     }
 
