@@ -16,7 +16,7 @@ class ProfileController extends Controller
     public function index()
     {
         $user = current_user();
-        return view('admin.profile.index', compact('user'));
+        return view('profile.index', compact('user'));
     }
 
     public function update(ProfileRequest $request)
@@ -27,6 +27,6 @@ class ProfileController extends Controller
         $this->repository->updateUser($user, $userData);
 
         $message = _m('common.success.update');
-        return $this->chooseReturn('success', $message, 'admin.profile');
+        return $this->chooseReturn('success', $message, 'profile');
     }
 }

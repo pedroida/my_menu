@@ -28,8 +28,8 @@ Route::get('store/menu/products', [\App\Http\Controllers\StoreController::class,
 
 Route::middleware(['auth'])->group(function () {
     /** Profile */
-    Route::get('profile', 'ProfileController@index')->name('profile');
-    Route::put('profile', 'ProfileController@update')->name('profile.update');
+    Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
+    Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 
     Route::resources([
         'categories' => \App\Http\Controllers\CategoryController::class,

@@ -7,7 +7,9 @@ use App\Http\Resources\PromotionResource;
 use App\Models\Product;
 use App\Models\Promotion;
 use App\Repositories\Criterias\Common\With;
+use App\Repositories\ProductRepository;
 use App\Repositories\PromotionRepository;
+use App\Repositories\Repository;
 
 class PromotionController extends Controller
 {
@@ -25,15 +27,7 @@ class PromotionController extends Controller
     public function create()
     {
         $promotion = Promotion::factory()->empty()->make();
-        $products = Product::query()
-            ->whereDoesntHave('promotion')
-            ->orderBy('name')
-            ->with(['category', 'unit'])
-            ->get()
-            ->map(function ($product) {
-                $product->name = $product->compound_name;
-                return $product;
-            });
+        $products = (new ProductRepository())->available();
 
         return view('promotions.create', compact('promotion', 'products'));
     }
@@ -56,24 +50,8 @@ class PromotionController extends Controller
 
     public function edit($id)
     {
-        $promotion = $this->repository->findOrFail($id);
-        $products = Product::query()
-            ->where(function ($query) use($promotion) {
-                return $query->whereDoesntHave('promotion')
-                    ->orWhereIn('id', $promotion->products->map->id);
-            })
-            ->orderBy('name')
-            ->with(['category', 'unit'])
-            ->get()
-            ->map(function ($product) {
-                $product->name = $product->compound_name;
-                return $product;
-            });
-
-        $promotion->products->map(function ($product) {
-            $product->name = $product->compound_name;
-            return $product;
-        });
+        $promotion = $this->repository->findWithProducts($id);
+        $products = (new ProductRepository())->available($promotion);
 
         return view('promotions.edit', compact('promotion', 'products'));
     }

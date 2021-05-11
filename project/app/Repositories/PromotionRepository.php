@@ -15,7 +15,7 @@ class PromotionRepository extends Repository
     public function create($data)
     {
         $promotion = parent::create($data);
-        Product::query()->whereIn('id', $data['products'])->update(['promotion_id' => $promotion->id]);
+        (new ProductRepository())->model->whereIn('id', $data['products'])->update(['promotion_id' => $promotion->id]);
 
         return $promotion;
     }
@@ -24,7 +24,19 @@ class PromotionRepository extends Repository
     {
         $promotion = $this->findOrFail($id);
         $promotion->products()->update(['promotion_id' => null]);
-        Product::query()->whereIn('id', $data['products'])->update(['promotion_id' => $promotion->id]);
+        (new ProductRepository())->model->whereIn('id', $data['products'])->update(['promotion_id' => $promotion->id]);
         return parent::update($id, $data);
+    }
+
+    public function findWithProducts($id)
+    {
+        $promotion = $this->findOrFail($id);
+
+        $promotion->products->map(function ($product) {
+            $product->name = $product->compound_name;
+            return $product;
+        });
+
+        return $promotion;
     }
 }

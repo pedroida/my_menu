@@ -1,8 +1,6 @@
 <?php
 namespace App\Contracts\Repositories;
 
-use App\Repositories\Criterias\Criteria;
-
 /**
  * Interface CriteriaInterface
  * @package Bosnadev\Repositories\Contracts
@@ -19,12 +17,6 @@ interface CriteriaContract
      * @return mixed
      */
     public function getCriteria();
-
-    /**
-     * @param Criteria $criteria
-     * @return $this
-     */
-    public function getByCriteria(Criteria $criteria);
 
     /**
      * @param mixed $criteria

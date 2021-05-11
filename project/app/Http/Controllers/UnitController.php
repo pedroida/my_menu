@@ -22,7 +22,7 @@ class UnitController extends Controller
 
     public function create()
     {
-        $unit = new Unit(['name' => '']);
+        $unit = Unit::factory()->empty()->make();
 
         return view('units.create', compact('unit'));
     }

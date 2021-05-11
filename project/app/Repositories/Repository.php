@@ -279,12 +279,6 @@ abstract class Repository implements CriteriaContract
         return $this->criteria;
     }
 
-    public function getByCriteria(Criteria $criteria)
-    {
-        $this->model = $criteria->apply($this->model, $this);
-        return $this;
-    }
-
     public function pushCriteria($criterias)
     {
         if (is_array($criterias) || $criterias instanceof Collection) {

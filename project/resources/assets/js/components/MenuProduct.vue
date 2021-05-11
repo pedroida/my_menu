@@ -9,6 +9,7 @@
       </div>
       <div class="card-body">
         <h3>{{ product.name }}</h3>
+        <p class="card-subtitle">{{ product.unit }}</p>
         <div class="product-description">{{ product.description }}</div>
         <span class="price" :class="{'old-price' : product.promotional_price}">
           R$ {{ product.price }}
