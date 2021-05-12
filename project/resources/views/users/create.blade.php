@@ -12,7 +12,7 @@
         </breadcrumb-item>
 
         <breadcrumb-item href="{{ route('users.index') }}">
-            @lang('breadcrumb.users-admin.index')
+            @lang('breadcrumb.users.index')
         </breadcrumb-item>
 
         <breadcrumb-item active>

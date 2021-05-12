@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Cache;
 
 class StoreController extends Controller
 {
+
     private $singletonStore;
     /**
      * Create a new controller instance.
