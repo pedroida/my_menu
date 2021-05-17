@@ -28,7 +28,7 @@ class Flash
 
     public function create($type, $messages)
     {
-        if (! is_array($messages)) {
+        if (!is_array($messages)) {
             $messages = [$messages];
         }
 
@@ -36,7 +36,7 @@ class Flash
         $this->messages[$type] = array_merge($this->messages[$type], $messages);
 
         foreach ($this->messages as $key => $messages) {
-            \Session::flash($key, $messages);
+            session()->flash($key, $messages);
         }
 
         return $this;
