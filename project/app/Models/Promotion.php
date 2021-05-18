@@ -18,7 +18,9 @@ class Promotion extends Model
     protected $table = 'promotions';
 
     protected $searchBy = ['name', 'valid_from', 'valid_until', 'value'];
-    protected $searchByRelationship = ['products.name'];
+    protected $searchByRelationship = [
+        'products' => ['name']
+    ];
 
     protected $fillable = ['name', 'type', 'valid_from', 'valid_until', 'value'];
 
